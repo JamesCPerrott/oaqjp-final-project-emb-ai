@@ -1,3 +1,7 @@
+"""
+This function initiates the application of emotion detection to be
+executed over the Flask channel and deplyed on localhost:5000.
+"""
 from flask import Flask, render_template, request
 
 from EmotionDetection.emotion_detection import emotion_detector
@@ -19,12 +23,12 @@ def emotion_detect():
     """
     text_to_analyze = request.args.get('textToAnalyze')
 
-    #Check for no entered text
-    if text_to_analyze == "":
-        return "Invalid Input! Please enter some text."
-    
     #Submit input to analyzer
     response = emotion_detector(text_to_analyze)
+
+    #error checking for no input
+    if response['dominant_emotion'] == 'none':
+        return "Invalid text! Please try again!"
 
     return response
 
