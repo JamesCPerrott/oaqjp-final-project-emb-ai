@@ -1,6 +1,6 @@
 """
 This function initiates the application of emotion detection to be
-executed over the Flask channel and deplyed on localhost:5000.
+executed over the Flask channel and deployed on localhost:5000.
 """
 from flask import Flask, render_template, request
 
