@@ -18,12 +18,12 @@ def emotion_detector(text_to_analyze):
     #error checking for status code 400
     if response.status_code == 400:
         simplified_response = {
-            "anger": "none",
-            "disgust": "none",
-            "fear": "none",
-            "joy": "none",
-            "sadness": "none",
-            "dominant_emotion": "none" 
+            "anger": None,
+            "disgust": None,
+            "fear": None,
+            "joy": None,
+            "sadness": None,
+            "dominant_emotion": None 
         }
         print(simplified_response)
         return simplified_response
