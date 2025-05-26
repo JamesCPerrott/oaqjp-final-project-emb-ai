@@ -33,6 +33,9 @@ def emotion_detector(text_to_analyze):
     #determine the dominant emotion and add to response
     dominant_emotion = max(simplified_response, key=simplified_response.get)
     simplified_response["dominant_emotion"] = dominant_emotion
+
+    #console print for validation
+    print(simplified_response)
     
     return simplified_response
     
